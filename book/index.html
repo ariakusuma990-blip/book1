@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turin Book - Perpustakaan Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Turin<span>Book.</span></div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#books">Koleksi Buku</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+
+            <a href="#books" class="nav-button">Jelajahi Buku</a>
+            <div class="menu-toggle" id="menuToggle">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="subtitle">SELAMAT DATANG DI TURIN BOOK</p>
+            <h1>Temukan Dunia Baru<br>
+                Melalui <span>Buku.</span>
+            </h1>
+            <p class="hero-description">
+                Perpustakaan digital untuk menemukan berbagai
+                pengetahuan, inspirasi, dan cerita menarik.
+            </p>
+
+            <a href="#books" class="primary-button">
+                Mulai Membaca →
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800"
+                 alt="Perpustakaan">
+        </div>
+    </section>
+
+    <!-- Statistik -->
+    <section class="stats">
+        <div class="stat-item">
+            <h2>1.500+</h2>
+            <p>Koleksi Buku</p>
+        </div>
+        <div class="stat-item">
+            <h2>500+</h2>
+            <p>Anggota</p>
+        </div>
+        <div class="stat-item">
+            <h2>50+</h2>
+            <p>Kategori Buku</p>
+        </div>
+        <div class="stat-item">
+            <h2>24/7</h2>
+            <p>Akses Digital</p>
+        </div>
+    </section>
+
+    <!-- Books -->
+    <section class="books-section" id="books">
+        <div class="section-heading">
+            <p class="subtitle">KOLEKSI KAMI</p>
+            <h2>Temukan Buku Favoritmu</h2>
+            <p>Jelajahi berbagai pilihan buku terbaik di Turin Book.</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput"
+                   placeholder="Cari judul buku...">
+            <button onclick="searchBooks()">Cari</button>
+        </div>
+
+        <div class="categories">
+            <button class="category active" data-category="Semua">Semua</button>
+            <button class="category" data-category="Novel">Novel</button>
+            <button class="category" data-category="Pendidikan">Pendidikan</button>
+            <button class="category" data-category="Teknologi">Teknologi</button>
+            <button class="category" data-category="Sejarah">Sejarah</button>
+        </div>
+
+        <div class="book-container" id="bookContainer">
+
+            <div class="book-card" data-title="Laskar Pelangi"
+                 data-category="Novel">
+                <img src="https://covers.openlibrary.org/b/isbn/9789793062792-L.jpg"
+                     alt="Laskar Pelangi">
+                <div class="book-info">
+                    <span>Novel</span>
+                    <h3>Laskar Pelangi</h3>
+                    <p>Andrea Hirata</p>
+                    <button onclick="borrowBook('Laskar Pelangi')">
+                        Pinjam Buku
+                    </button>
+                </div>
+            </div>
+
+            <div class="book-card" data-title="Bumi Manusia"
+                 data-category="Novel">
+                <img src="https://covers.openlibrary.org/b/isbn/9789799731234-L.jpg"
+                     alt="Bumi Manusia">
+                <div class="book-info">
+                    <span>Novel</span>
+                    <h3>Bumi Manusia</h3>
+                    <p>Pramoedya Ananta Toer</p>
+                    <button onclick="borrowBook('Bumi Manusia')">
+                        Pinjam Buku
+                    </button>
+                </div>
+            </div>
+
+            <div class="book-card" data-title="Belajar Pemrograman"
+                 data-category="Teknologi">
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500"
+                     alt="Pemrograman">
+                <div class="book-info">
+                    <span>Teknologi</span>
+                    <h3>Belajar Pemrograman</h3>
+                    <p>Tim Turin Book</p>
+                    <button onclick="borrowBook('Belajar Pemrograman')">
+                        Pinjam Buku
+                    </button>
+                </div>
+            </div>
+
+            <div class="book-card" data-title="Sejarah Dunia"
+                 data-category="Sejarah">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=500"
+                     alt="Sejarah Dunia">
+                <div class="book-info">
+                    <span>Sejarah</span>
+                    <h3>Sejarah Dunia</h3>
+                    <p>Tim Sejarah</p>
+                    <button onclick="borrowBook('Sejarah Dunia')">
+                        Pinjam Buku
+                    </button>
+                </div>
+            </div>
+
+            <div class="book-card" data-title="Matematika Dasar"
+                 data-category="Pendidikan">
+                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500"
+                     alt="Matematika">
+                <div class="book-info">
+                    <span>Pendidikan</span>
+                    <h3>Matematika Dasar</h3>
+                    <p>Tim Pendidikan</p>
+                    <button onclick="borrowBook('Matematika Dasar')">
+                        Pinjam Buku
+                    </button>
+                </div>
+            </div>
+
+            <div class="book-card" data-title="Teknologi Masa Depan"
+                 data-category="Teknologi">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500"
+                     alt="Teknologi">
+                <div class="book-info">
+                    <span>Teknologi</span>
+                    <h3>Teknologi Masa Depan</h3>
+                    <p>Tim Teknologi</p>
+                    <button onclick="borrowBook('Teknologi Masa Depan')">
+                        Pinjam Buku
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <p id="emptyMessage" class="empty-message" hidden>
+            Buku tidak ditemukan.
+        </p>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800"
+                 alt="Suasana perpustakaan">
+        </div>
+
+        <div class="about-content">
+            <p class="subtitle">TENTANG KAMI</p>
+            <h2>Membangun Generasi Cerdas Bersama Turin Book</h2>
+            <p>
+                Turin Book merupakan perpustakaan yang menyediakan
+                berbagai koleksi buku untuk membantu masyarakat
+                memperoleh ilmu pengetahuan dan mengembangkan minat baca.
+            </p>
+            <a href="#contact" class="primary-button">Hubungi Kami</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <p class="subtitle">HUBUNGI KAMI</p>
+        <h2>Ayo Bergabung Bersama Turin Book!</h2>
+        <p>Jadikan membaca sebagai bagian dari kehidupanmu.</p>
+        <a href="mailto:turinbook@email.com" class="primary-button">
+            Kirim Pesan
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2>Turin<span>Book.</span></h2>
+        <p>© 2026 Turin Book. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
